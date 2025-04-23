@@ -18,9 +18,22 @@ cd lib/pico-sdk
 git submodule update --init
 cd ../../ports/rp2
 
-make FROZEN_MANIFEST=/home/damien/dev/upiscine/boards/manifest-rp2-PICO_W.py BOARD=PICO_W submodules
-make FROZEN_MANIFEST=/home/damien/dev/upiscine/boards/manifest-rp2-PICO_W.py BOARD=PICO_W clean
-make FROZEN_MANIFEST=/home/damien/dev/upiscine/boards/manifest-rp2-PICO_W.py BOARD=PICO_W
+make FROZEN_MANIFEST=/home/damien/dev/upiscine/boards/manifest-rp2-PICO_W.py BOARD=RPI_PICO_W submodules
+make FROZEN_MANIFEST=/home/damien/dev/upiscine/boards/manifest-rp2-PICO_W.py BOARD=RPI_PICO_W clean
+make FROZEN_MANIFEST=/home/damien/dev/upiscine/boards/manifest-rp2-PICO_W.py BOARD=RPI_PICO_W
 ```
 
 Upload the file `/home/damien/dev/micropython/ports/rp2/build-PICO_W/firmware.uf2` into the RP2 device in Bootsel mode (https://projects.raspberrypi.org/en/projects/getting-started-with-the-pico/3)
+
+### Tests
+
+```bash
+cd /home/damien/dev/micropython/ports/unix
+make submodules
+make clean
+make FROZEN_MANIFEST=/home/damien/dev/upiscine/boards/manifest.py
+```
+
+```
+../micropython/ports/unix/build-standard/micropython -m tests.test_pool_heater
+```

@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./boards/libs/microdot/src",
+        "/home/damien/dev/micropython"
+    ]
+}

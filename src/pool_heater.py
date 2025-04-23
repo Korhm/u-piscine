@@ -13,7 +13,7 @@ try:
 except:
     import tests.fakes.ds18x20 as ds18x20
 
-from temp_sensors import temp_sensors_addr
+from src.temp_sensors import temp_sensors_addr
 from os import listdir
 import time
 

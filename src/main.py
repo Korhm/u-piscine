@@ -1,39 +1,57 @@
-from wifi import wlan_connect
-from microdot_asyncio import Microdot, abort
-from microdot_cors import CORS
 import gc
-import uasyncio as asyncio
+import asyncio
+import uos
+import board_info
+from microdot import Microdot, abort
 from micropython import const
 from functools import wraps
 from config import config
 from pool_heater import PoolHeater
+from microdot_uart import MicrodotUART
 
 PIN_SENSORS = const(26)
 PIN_PUMP = const(21)
 HTTP_PORT = const(80)
 
-asyncio.create_task(wlan_connect())
+
+print("Starting...")
+
+if board_info.USE_ETHERNET:
+    from CH9121 import CH9121
+    tcp_server = CH9121()
+    # Need it synchronised because uart should be free for later use
+    asyncio.run(tcp_server.set_tcp_server_dhcp(port=HTTP_PORT))
+    pass
+else:
+    from wifi import wlan_connect
+    asyncio.create_task(wlan_connect())
+
 chauffage = PoolHeater(pin_sensors=PIN_SENSORS, pin_pump=PIN_PUMP)
 
-app = Microdot()
-CORS(app=app, allowed_origins="*", allow_credentials=True)
+
+if board_info.USE_ETHERNET:
+    app = MicrodotUART()
+else:
+    app = Microdot()
+
+# CORS(app=app, allowed_origins="*", allow_credentials=True)
 
 def validate_token(func):
   @wraps(func)
   def decorated_function(*args, **kwargs):
-    request = args[0]
-    try:
-        token = request.headers['Authorization'].replace('Bearer ', '')
-        if not token in config.get('authorized_tokens'):
-            raise
-    except:
-        abort(401)
+    # request = args[0]
+    # try:
+    #     token = request.headers['Authorization'].replace('Bearer ', '')
+    #     if not token in config.get('authorized_tokens'):
+    #         raise
+    # except:
+    #     abort(401)
     return func(*args, **kwargs)
   return decorated_function
 
 @app.get('/piscine')
 def index(request):
-    return "piscine micropython"
+    return str(uos.uname())
 
 @app.get('/piscine/power')
 @validate_token
@@ -47,7 +65,7 @@ async def get_power(request):
 @app.put('/piscine/power')
 @validate_token
 async def put_power(request):
-    power = request.args.get('power')
+    power = request.json.get('power')
 
     if power == 'on':
         chauffage.start()
@@ -91,4 +109,7 @@ async def scan_sensors(request):
 
 gc.collect()
 
-app.run(port=HTTP_PORT, debug=True)
+if board_info.USE_ETHERNET:
+    app.run(debug=True)
+else:
+    app.run(port=HTTP_PORT, debug=True)

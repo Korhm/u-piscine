@@ -1,0 +1,164 @@
+Starting...
+Scanning DS18x20 sensors ...
+Number of DS18x20 sensors found: 0
+Restoring state ...
+ ... power.state -> off
+Starting async server on UART
+serve
+[2194720 ms] AsyncUARTReader.readline
+[2200162 ms] AsyncUARTReader.readline.return b'GET /piscine HTTP/1.1\r'
+create method GET
+create url /piscine
+create http_version 1.1
+[2200164 ms] AsyncUARTReader.readline
+[2200186 ms] AsyncUARTReader.readline.return b'Host: 192.168.1.29:88\r'
+create line Host: 192.168.1.29:88
+create header Host 192.168.1.29:88
+create value 192.168.1.29:88
+[2200189 ms] AsyncUARTReader.readline
+[2200211 ms] AsyncUARTReader.readline.return b'User-Agent: curl/8.5.0\r'
+create line User-Agent: curl/8.5.0
+create header User-Agent curl/8.5.0
+create value curl/8.5.0
+[2200214 ms] AsyncUARTReader.readline
+[2200225 ms] AsyncUARTReader.readline.return b'Accept: */*\r'
+create line Accept: */*
+create header Accept */*
+create value */*
+[2200227 ms] AsyncUARTReader.readline
+[2200230 ms] AsyncUARTReader.readline.return b'\r'
+create line 
+[UARTWriter] aclose called
+GET /piscine 200
+serve
+[2200298 ms] AsyncUARTReader.readline
+[2204911 ms] AsyncUARTReader.readline.return b'GET /piscine HTTP/1.1\r'
+create method GET
+create url /piscine
+create http_version 1.1
+[2204914 ms] AsyncUARTReader.readline
+[2204935 ms] AsyncUARTReader.readline.return b'Host: 192.168.1.29:88\r'
+create line Host: 192.168.1.29:88
+create header Host 192.168.1.29:88
+create value 192.168.1.29:88
+[2204937 ms] AsyncUARTReader.readline
+[2204960 ms] AsyncUARTReader.readline.return b'User-Agent: curl/8.5.0\r'
+create line User-Agent: curl/8.5.0
+create header User-Agent curl/8.5.0
+create value curl/8.5.0
+[2204962 ms] AsyncUARTReader.readline
+[2204973 ms] AsyncUARTReader.readline.return b'Accept: */*\r'
+create line Accept: */*
+create header Accept */*
+create value */*
+[2204976 ms] AsyncUARTReader.readline
+[2204978 ms] AsyncUARTReader.readline.return b'\r'
+create line 
+[UARTWriter] aclose called
+GET /piscine 200
+serve
+[2205047 ms] AsyncUARTReader.readline
+[2211280 ms] AsyncUARTReader.readline.return b'GET /piscine HTTP/1.1\r'
+create method GET
+create url /piscine
+create http_version 1.1
+[2211283 ms] AsyncUARTReader.readline
+[2211304 ms] AsyncUARTReader.readline.return b'Host: 192.168.1.29:88\r'
+create line Host: 192.168.1.29:88
+create header Host 192.168.1.29:88
+create value 192.168.1.29:88
+[2211307 ms] AsyncUARTReader.readline
+[2211329 ms] AsyncUARTReader.readline.return b'User-Agent: curl/8.5.0\r'
+create line User-Agent: curl/8.5.0
+create header User-Agent curl/8.5.0
+create value curl/8.5.0
+[2211332 ms] AsyncUARTReader.readline
+[2211342 ms] AsyncUARTReader.readline.return b'Accept: */*\r'
+create line Accept: */*
+create header Accept */*
+create value */*
+[2211345 ms] AsyncUARTReader.readline
+[2211348 ms] AsyncUARTReader.readline.return b'\r'
+create line 
+[UARTWriter] aclose called
+GET /piscine 200
+serve
+[2211416 ms] AsyncUARTReader.readline
+[3028579 ms] AsyncUARTReader.readline.return b'GET /piscine HTTP/1.1\r'
+create method GET
+create url /piscine
+create http_version 1.1
+[3028582 ms] AsyncUARTReader.readline
+[3028603 ms] AsyncUARTReader.readline.return b'Host: 192.168.1.29:88\r'
+create line Host: 192.168.1.29:88
+create header Host 192.168.1.29:88
+create value 192.168.1.29:88
+[3028606 ms] AsyncUARTReader.readline
+[3028628 ms] AsyncUARTReader.readline.return b'User-Agent: curl/8.5.0\r'
+create line User-Agent: curl/8.5.0
+create header User-Agent curl/8.5.0
+create value curl/8.5.0
+[3028631 ms] AsyncUARTReader.readline
+[3028642 ms] AsyncUARTReader.readline.return b'Accept: */*\r'
+create line Accept: */*
+create header Accept */*
+create value */*
+[3028644 ms] AsyncUARTReader.readline
+[3028647 ms] AsyncUARTReader.readline.return b'\r'
+create line 
+[UARTWriter] aclose called
+GET /piscine 200
+serve
+[3028715 ms] AsyncUARTReader.readline
+[3033703 ms] AsyncUARTReader.readline.return b'GET /piscine HTTP/1.1\r'
+create method GET
+create url /piscine
+create http_version 1.1
+[3033706 ms] AsyncUARTReader.readline
+[3033727 ms] AsyncUARTReader.readline.return b'Host: 192.168.1.29:88\r'
+create line Host: 192.168.1.29:88
+create header Host 192.168.1.29:88
+create value 192.168.1.29:88
+[3033730 ms] AsyncUARTReader.readline
+[3033752 ms] AsyncUARTReader.readline.return b'User-Agent: curl/8.5.0\r'
+create line User-Agent: curl/8.5.0
+create header User-Agent curl/8.5.0
+create value curl/8.5.0
+[3033755 ms] AsyncUARTReader.readline
+[3033765 ms] AsyncUARTReader.readline.return b'Accept: */*\r'
+create line Accept: */*
+create header Accept */*
+create value */*
+[3033768 ms] AsyncUARTReader.readline
+[3033770 ms] AsyncUARTReader.readline.return b'\r'
+create line 
+[UARTWriter] aclose called
+GET /piscine 200
+serve
+[3033839 ms] AsyncUARTReader.readline
+[3037280 ms] AsyncUARTReader.readline.return b'GET /piscine HTTP/1.1\r'
+create method GET
+create url /piscine
+create http_version 1.1
+[3037283 ms] AsyncUARTReader.readline
+[3037304 ms] AsyncUARTReader.readline.return b'Host: 192.168.1.29:88\r'
+create line Host: 192.168.1.29:88
+create header Host 192.168.1.29:88
+create value 192.168.1.29:88
+[3037307 ms] AsyncUARTReader.readline
+[3037329 ms] AsyncUARTReader.readline.return b'User-Agent: curl/8.5.0\r'
+create line User-Agent: curl/8.5.0
+create header User-Agent curl/8.5.0
+create value curl/8.5.0
+[3037332 ms] AsyncUARTReader.readline
+[3037343 ms] AsyncUARTReader.readline.return b'Accept: */*\r'
+create line Accept: */*
+create header Accept */*
+create value */*
+[3037345 ms] AsyncUARTReader.readline
+[3037348 ms] AsyncUARTReader.readline.return b'\r'
+create line 
+[UARTWriter] aclose called
+GET /piscine 200
+serve
+[3037415 ms] AsyncUARTReader.readline
